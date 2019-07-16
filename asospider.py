@@ -119,7 +119,7 @@ class asospider():
             with open(os.path.join(self.used_file_path,'errorid.txt'),'a+') as f:
                 f.write(',{}'.format(appleid))
             self.used_url.append(appleid)
-            print('error: {}',format(appleid))
+            print('error: {}'.format(appleid))
 
 
     def gen_urls(self,appleid):
