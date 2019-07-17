@@ -112,14 +112,14 @@ class asospider():
             with open(os.path.join(self.used_file_path,'success.txt'),'a+') as f:
                 f.write(',{}'.format(appleid))
             self.used_url.append(appleid)
-            print('success: {}'.format(appleid))
+            print('success: {} | {:.2f}%'.format(appleid, len(self.used_url)/len(self.buffer_url)*100))
             time.sleep(1)
         except:
             self.save_to_db((appleid,),'errorid')
             with open(os.path.join(self.used_file_path,'errorid.txt'),'a+') as f:
                 f.write(',{}'.format(appleid))
             self.used_url.append(appleid)
-            print('error: {}'.format(appleid))
+            print('error: {} | {:.2f}%'.format(appleid,len(self.used_url)/len(self.buffer_url)*100))
 
 
     def gen_urls(self,appleid):
